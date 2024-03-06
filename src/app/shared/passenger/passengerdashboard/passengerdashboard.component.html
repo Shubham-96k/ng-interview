@@ -1,0 +1,21 @@
+
+<app-passengercount
+[totalpass]="passengers.length"
+[chkdin]="count"></app-passengercount>
+
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let pass of passengers">
+        <span
+        [ngClass]="{
+            'bg-success' : pass.checkedIn,
+            'bg-danger' : !pass.checkedIn
+        }" class="mr-2">
+
+        </span>
+        {{pass.fullname}}
+    </li>
+</ul>
+
+<app-passengercard *ngFor="let pass of passengers"
+[sendpass]="pass"></app-passengercard>
+

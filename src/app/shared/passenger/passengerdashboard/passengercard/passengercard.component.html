@@ -1,0 +1,21 @@
+<div class="card my-3">
+    <div class="card-header">
+        <h3 *ngIf="inputele else control">{{sendpass.fullname}}</h3>
+    </div>
+    <div class="card-body">
+        <p>Checked InDate : <strong>{{sendpass.checkInDate ? (sendpass.checkInDate | date) : 0}}</strong></p>
+        <p>children : <strong>{{sendpass.children ? sendpass.children.length : 0}}</strong></p>
+    </div>
+    <div class="card-footer d-flex justify-content-between">
+        <button *ngIf="inputele" class="btn btn-outline-primary"
+        (click)="onEdit()">Edit</button>
+        <button *ngIf="!inputele" class="btn btn-info"
+        (click)="onUpdate()">update</button>
+        <button class="btn btn-outline-danger"
+        (click)="onDelete()">Delete</button>
+    </div>
+</div>
+
+<ng-template #control>
+    <input type="text" #inputvalue class="form-control" [value]="sendpass.fullname">
+</ng-template>
