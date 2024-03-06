@@ -3,7 +3,7 @@
         <h3 *ngIf="inputele else control">{{sendpass.fullname}}</h3>
     </div>
     <div class="card-body">
-        <p>Checked InDate : <strong>{{sendpass.checkInDate ? (sendpass.checkInDate | date) : 0}}</strong></p>
+        <p>Checked InDate : <strong>{{sendpass.checkInDate ? (sendpass.checkInDate | date) : 'not checked in'}}</strong></p>
         <p>children : <strong>{{sendpass.children ? sendpass.children.length : 0}}</strong></p>
     </div>
     <div class="card-footer d-flex justify-content-between">
